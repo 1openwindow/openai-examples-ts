@@ -8,19 +8,22 @@ dotenv.config();
  * Demo CLI for testing basic functionality.
  *
  * ```
- * npx tsx src/chatgpt-example.ts
+ * npx tsx src/chatgpt-steam.ts
  * ```
  */
 async function main() {
   const api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY });
 
-  const prompt =
-    "Write a python version of bubble sort. Do not include example usage.";
+  // timeout after 2 minutes (which will also abort the underlying HTTP request)
+  const res = await api.sendMessage(
+    "write me a really really long essay on frogs",
+    {
+      timeoutMs: 2 * 60 * 1000,
+    }
+  );
 
-  const res = await oraPromise(api.sendMessage(prompt), {
-    text: prompt,
-  });
-  console.log(res);
+  // print the full text at the end
+  console.log(res.text);
 }
 
 main().catch((err) => {

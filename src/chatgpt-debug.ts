@@ -8,11 +8,14 @@ dotenv.config();
  * Demo CLI for testing basic functionality.
  *
  * ```
- * npx tsx src/chatgpt-example.ts
+ * npx tsx src/chatgpt-debug.ts
  * ```
  */
 async function main() {
-  const api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY });
+  const api = new ChatGPTAPI({
+    apiKey: process.env.OPENAI_API_KEY,
+    //debug: true,
+  });
 
   const prompt =
     "Write a python version of bubble sort. Do not include example usage.";

@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@keyv/redis": "^2.5.5",
     "chatgpt": "^4.2.0",
     "dotenv-safe": "^8.2.0",
+    "keyv": "^4.5.2",
     "openai": "^3.1.0",
     "ora": "^6.1.2",
     "ts-node": "^10.9.1"
