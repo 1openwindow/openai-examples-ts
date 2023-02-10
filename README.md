@@ -32,6 +32,29 @@ This repo contains Node.js examples using the [OpenAI API](https://beta.openai.c
    $ node xxx.js
    ```
 
+## Fune-tuning model
+1. prepare your data set in a json file
+2. execute the following command to verify the data set in OpenAI
+   ```
+   openai tools fine_tunes.prepare_data -f <LOCAL_FILE>
+   ```
+3. Create a fine-tuned model. Base model includes `davinci`, `curie`, `babbage`, `ada`, `gpt3`
+   ```
+   openai api fine_tunes.create -t <TRAIN_FILE_ID_OR_PATH> -m <BASE_MODEL>
+   ```
+4. To list all fine-tuned models
+   ```
+   openai api fine_tunes.list
+   ```
+5. To use a fine-tuned model
+   ```
+   openai api completions.create -m <FINE_TUNED_MODEL> -p <YOUR_PROMPT>
+   ```
+6. To delete a fine-tuned model
+   ```
+   openai api fine_tunes.delete -i <FINE_TUNED_MODEL>
+   ```
+   
 ## Reference
 
 * [Documentation](https://beta.openai.com/docs/introduction)

@@ -1,7 +1,18 @@
-async function main() {
-  require('dotenv').config()
+import dotenv from "dotenv-safe";
+import { oraPromise } from "ora";
 
+dotenv.config();
+
+/**
+ * Demo CLI for testing basic functionality.
+ *
+ * ```
+ * npx tsx src/embedding.ts
+ * ```
+ */
+async function main() {
   const { Configuration, OpenAIApi } = require("openai");
+
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -11,7 +22,7 @@ async function main() {
     input: "The food was delicious and the waiter...",
   });
 
-  console.log(response.data.embedding[0]);
+  console.log(response);
 }
 
 main();

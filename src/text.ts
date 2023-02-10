@@ -1,5 +1,16 @@
+import dotenv from "dotenv-safe";
+import { oraPromise } from "ora";
+
+dotenv.config();
+
+/**
+ * Demo CLI for testing basic functionality.
+ *
+ * ```
+ * npx tsx src/text.ts
+ * ```
+ */
 async function main() {
-    c
     const { Configuration, OpenAIApi } = require("openai");
 
     const configuration = new Configuration({
@@ -8,26 +19,13 @@ async function main() {
     const openai = new OpenAIApi(configuration);
     
     const response = await openai.createCompletion({
-        model: "code-davinci-002",
-        prompt: `
-            #JavaScript to Python:
-            JavaScript:
-dogs = ["bill", "joe", "carl"]
-car = []
-dogs.forEach((dog) {
-    car.push(dog);
-});
-
-        Python:`,
+        model: "text-davinci-003",
+        prompt: "How to write a Teams app",
         temperature: 0,
-        max_tokens: 128,
-        top_p: 1.0,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.0,
-        stop: ["#"],
+        max_tokens: 2048,
     });
 
     console.log(response.data.choices[0].text);
 }
 
-main(); 
+main();
