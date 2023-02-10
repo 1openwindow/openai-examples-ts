@@ -2,7 +2,7 @@ async function main() {
   require('dotenv').config()
 
   // a example to demo bug fix in ChatGPT
-  const fs = require('fs');
+//const fs = require('fs');
 
   const { Configuration, OpenAIApi } = require("openai");
 

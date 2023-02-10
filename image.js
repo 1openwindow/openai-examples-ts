@@ -8,8 +8,9 @@ async function main() {
     const openai = new OpenAIApi(configuration);
     
     const response = await openai.createImage({
-        prompt: "用中国山水画给这首诗配图。寂静夜色深，离愁难再寻。心中留给谁，此生离别音。",
-        n: 10,
+        prompt: "generate a pixal map of Chinese. each province is a different color and a round point on it. the background is transparent.",
+        //prompt: "generate a pixal game character. the background is transparent. the style is carton, like the game 'super mario'.",
+        n: 1,
         size: "1024x1024",
     });
 
