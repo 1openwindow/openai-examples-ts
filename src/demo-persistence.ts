@@ -12,6 +12,10 @@ dotenv.config();
  * ```
  * npx tsx demos/demo-persistence.ts
  * ```
+ * to run this demo. please start a redis server locally or set the REDIS_URL. see the following commands:
+ * ```
+ * sudo service redis-server start
+ * ```
  */
 async function main() {
   const redisUrl = process.env.REDIS_URL || "redis://localhost:6379";
@@ -54,6 +58,7 @@ async function main() {
       }
     );
     console.log("\n" + res.text + "\n");
+    //console.log(res);
   }
 
   // wait for redis to finish and then disconnect

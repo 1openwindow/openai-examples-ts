@@ -54,7 +54,15 @@ This repo contains Node.js examples using the [OpenAI API](https://beta.openai.c
    ```
    openai api fine_tunes.delete -i <FINE_TUNED_MODEL>
    ```
-   
+## Command line tools
+ > list all key in redis
+ ```
+ redis-cli --scan --pattern '*'
+ ```
+ > get value of a key in redis
+ ```
+ redis-cli get <KEY>
+ ```
 ## Reference
 
 * [Documentation](https://beta.openai.com/docs/introduction)
