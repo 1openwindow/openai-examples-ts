@@ -1,5 +1,4 @@
 import dotenv from "dotenv-safe";
-import { oraPromise } from "ora";
 
 dotenv.config();
 
@@ -11,21 +10,21 @@ dotenv.config();
  * ```
  */
 async function main() {
-    const { Configuration, OpenAIApi } = require("openai");
+  const { Configuration, OpenAIApi } = require("openai");
 
-    const configuration = new Configuration({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
-    
-    const response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: "How to write a Teams app",
-        temperature: 0,
-        max_tokens: 2048,
-    });
+  const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+  const openai = new OpenAIApi(configuration);
 
-    console.log(response.data.choices[0].text);
+  const response = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: "How to write a Teams app",
+    temperature: 0,
+    max_tokens: 2048,
+  });
+
+  console.log(response.data.choices[0].text);
 }
 
 main();

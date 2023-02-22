@@ -1,8 +1,5 @@
-import dotenv from "dotenv-safe";
 import { oraPromise } from "ora";
 import { ChatGPTAPI } from "chatgpt";
-
-dotenv.config();
 
 /**
  * Demo CLI for testing basic functionality.

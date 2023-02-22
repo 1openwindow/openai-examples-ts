@@ -1,5 +1,4 @@
 import dotenv from "dotenv-safe";
-import { oraPromise } from "ora";
 
 dotenv.config();
 
