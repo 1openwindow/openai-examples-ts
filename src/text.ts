@@ -14,6 +14,11 @@ async function main() {
 
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
+    // azure: {
+    //   apiKey: process.env.OPEN_AI_KEY,
+    //   endpoint: process.env.OPEN_AI_ENDPOINT,
+    //   deploymendName: 'text-davinci-003-xxx'
+    // },
   });
   const openai = new OpenAIApi(configuration);
 
