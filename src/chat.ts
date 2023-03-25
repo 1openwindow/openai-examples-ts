@@ -10,10 +10,15 @@ dotenv.config();
  * ```
  */
 async function main() {
-  const { Configuration, OpenAIApi } = require("openai");
+  const { Configuration, OpenAIApi } = require("azure-openai");
 
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
+    azure: {
+      apiKey: process.env.OPEN_AI_KEY,
+      endpoint: process.env.OPEN_AI_ENDPOINT,
+      deploymentName: 'gpt-35-turbo-xxx'
+    },
   });
   const openai = new OpenAIApi(configuration);
 
